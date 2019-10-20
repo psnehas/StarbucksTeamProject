@@ -1,0 +1,511 @@
+{
+	"info": {
+		"_postman_id": "735261c2-fc43-4f20-a373-bd5483b09645",
+		"name": "Starbucks",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "phone",
+									"value": "",
+									"description": "user phone number",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "",
+									"description": "user email addresss (unique, required)",
+									"type": "text"
+								},
+								{
+									"key": "pin",
+									"value": "",
+									"description": "4 digit pin number",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "/user",
+							"path": [
+								"user"
+							]
+						},
+						"description": "A route for creating a new user profile"
+					},
+					"response": [
+						{
+							"name": "starbucks-user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "pin",
+											"value": "1234",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "415465018",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "api@starbucksapp.edu",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://54.188.73.76/user",
+									"protocol": "http",
+									"host": [
+										"54",
+										"188",
+										"73",
+										"76"
+									],
+									"path": [
+										"user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET,HEAD,OPTIONS,POST,PUT,DELETE"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Access-Control-Allow-Headers, Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "138"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"8a-Evp/uhPSVjB7nX0JFaUrq7vcezo\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 10 May 2019 19:57:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"card\": [],\n    \"authenticated\": false,\n    \"_id\": \"5cd5d7a4ce0bcd01598f6142\",\n    \"pin\": \"1234\",\n    \"phone\": \"415465018\",\n    \"email\": \"api@starbucksapp.edu\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3001/user/?email",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"user",
+								""
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": null,
+									"description": "User email address "
+								}
+							]
+						},
+						"description": "A route for deleting an existing user profile"
+					},
+					"response": []
+				},
+				{
+					"name": "user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "/user/?email=sample@sample.com",
+							"path": [
+								"user",
+								""
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "sample@sample.com",
+									"description": "User email param"
+								}
+							]
+						},
+						"description": "A route for finding an existing user profile by email"
+					},
+					"response": []
+				},
+				{
+					"name": "authenticate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "",
+									"description": "User email",
+									"type": "text"
+								},
+								{
+									"key": "pin",
+									"value": "",
+									"description": "4 digit pin number",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "/user/authenticate",
+							"path": [
+								"user",
+								"authenticate"
+							]
+						},
+						"description": "A route for authenticating user with pin."
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "",
+									"description": "User email to logout",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "/user/logout",
+							"path": [
+								"user",
+								"logout"
+							]
+						},
+						"description": "A route for authenticating user with pin."
+					},
+					"response": []
+				},
+				{
+					"name": "pin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "pin",
+									"value": "",
+									"description": "Current 4 digit pin",
+									"type": "text"
+								},
+								{
+									"key": "newPin",
+									"value": "",
+									"description": "New 4 digit pin",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "",
+									"description": "User email address",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "/user/pin",
+							"path": [
+								"user",
+								"pin"
+							]
+						},
+						"description": "A route for changing the user's pin number.\n"
+					},
+					"response": []
+				}
+			],
+			"description": "User Profile & Authentication API",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "2010b628-aac7-40a6-9716-cc8772ee075d",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "9c2884a4-381e-4f8c-8884-7edf51fc2027",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Card",
+			"item": [
+				{
+					"name": "addCard",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "cardId",
+									"value": "",
+									"description": "9 digit card number",
+									"type": "text"
+								},
+								{
+									"key": "cardCode",
+									"value": "",
+									"description": "3 digit card security code",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "",
+									"description": " The email address of the profile to recieve the card",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "/addCard",
+							"path": [
+								"addCard"
+							]
+						},
+						"description": "A route for adding a card to user profile"
+					},
+					"response": []
+				}
+			],
+			"description": "Card management API"
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "orders",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "",
+									"description": "The user email managing the order",
+									"type": "text"
+								},
+								{
+									"key": "cardno",
+									"value": "",
+									"description": "Card number to use for payment",
+									"type": "text"
+								},
+								{
+									"key": "qty",
+									"value": "",
+									"description": "Number of items in order",
+									"type": "text"
+								},
+								{
+									"key": "item",
+									"value": "",
+									"description": "Item name",
+									"type": "text"
+								},
+								{
+									"key": "milk",
+									"value": "",
+									"description": "Optional features",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "/orders",
+							"path": [
+								"orders"
+							]
+						},
+						"description": "A route for creating orders"
+					},
+					"response": []
+				}
+			],
+			"description": "Order management API"
+		},
+		{
+			"name": "Payment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"sample@sample.com\",\n\t\"cardNum\":111111111,\n\t\"orderid\":\"5cd4c47e8b78652aa71e5fc4\"\n}\n"
+				},
+				"url": {
+					"raw": "/makePayment",
+					"path": [
+						"makePayment"
+					]
+				},
+				"description": "make payment route"
+			},
+			"response": []
+		}
+	]
+}
